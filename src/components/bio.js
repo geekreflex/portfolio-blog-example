@@ -34,8 +34,9 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong>, a framework built upon the
-              React library.
+              Hello, thank for stopping by. I'm <strong>{author}</strong>, a
+              software engineer from Nigeria. This is my personal blog where I
+              dabble with codes and everything inbetween.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 Follow me on Twitter
