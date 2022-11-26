@@ -8,4 +8,6 @@ description: My first blog post
 
 T﻿his is the simple first blog post.
 
+S﻿tick around to find out more.
+
 ![]()
