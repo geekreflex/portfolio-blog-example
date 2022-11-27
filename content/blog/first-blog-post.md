@@ -8,3 +8,5 @@ description: My first blog post
 This is the simple first blog post.
 
 Stick around to find out more.
+
+See you soon
