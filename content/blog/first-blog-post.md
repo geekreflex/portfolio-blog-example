@@ -5,8 +5,6 @@ title: First Blog Post
 description: My first blog post
 ---
 
-![Welcome](../assets/pexels-aleksandra-s-13297062.jpg)
-
 This is the simple first blog post.
 
 Stick around to find out more.
