@@ -3,19 +3,15 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 export const Navigation = () => {
-
-  const navLinks = [
-    { label: 'Blog', to: '/blog' },
-    { label: 'Home', to: '/' },
-  ]
+  const navLinks = [{ label: "Blog", to: "/blog" }]
 
   return (
     <Wrapper>
       <Link to="/">
-      
-      <h3>GeekReflex</h3></Link>
+        <h3>GeekReflex</h3>
+      </Link>
       <LinkList>
-        {navLinks.map(link => (
+        {navLinks.map((link) => (
           <Link to={link.to}>{link.label}</Link>
         ))}
       </LinkList>
@@ -31,13 +27,14 @@ const Wrapper = styled.div`
   align-items: center;
 
   * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
   }
 `
 const LinkList = styled.div`
-display: flex;
-a {
-  margin-left: 10px;
-}
+  display: flex;
+  a {
+    margin-left: 10px;
+    text-decoration: none !important;
+  }
 `
