@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import styled from "styled-components"
 import { useFlexSearch } from "react-use-flexsearch"
 import * as queryString from "query-string"
@@ -103,14 +103,14 @@ const AllPosts = ({ posts }) => (
   </div>
 )
 
-const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
+const SearchPosts = ({ posts, localSearchBlog, location }) => {
   const { search } = queryString.parse(location.search)
   const [query, setQuery] = useState(search || "")
 
   const results = useFlexSearch(
     query,
     localSearchBlog.index,
-    JSON.parse(localSearchBlog.store)
+    localSearchBlog.store
   )
 
   return (

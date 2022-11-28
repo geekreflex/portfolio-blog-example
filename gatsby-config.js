@@ -16,6 +16,11 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-root-import`,
+
+    /**
+     * Search
+     */
     {
       resolve: "gatsby-plugin-local-search",
       options: {
@@ -28,29 +33,29 @@ module.exports = {
         },
         query: `
           {
-            allMdx {
+            allMarkdownRemark {
               nodes {
                 id
                 fields { slug }
                 excerpt
-                rawBody
                 frontmatter {
                   title
                   description
                   date(formatString: "MMMM DD, YYYY")
                 }
+                rawMarkdownBody
               }
             }
           }
         `,
         ref: "id",
-        index: ["title", "rawBody"],
+        index: ["title", "body"],
         store: ["id", "slug", "date", "title", "excerpt", "description"],
         normalizer: ({ data }) =>
-          data.allMdx.nodes.map(node => ({
+          data.allMarkdownRemark.nodes.map(node => ({
             id: node.id,
             slug: node.fields.slug,
-            rawBody: node.rawBody,
+            body: node.rawMarkdownBody,
             excerpt: node.excerpt,
             title: node.frontmatter.title,
             description: node.frontmatter.description,
@@ -59,7 +64,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-feed-mdx`,
+      resolve: `gatsby-plugin-feed`,
       options: {
         query: `
           {
@@ -91,7 +96,7 @@ module.exports = {
             },
             query: `
               {
-                allMdx(
+                allMarkdownRemark(
                   sort: {order: DESC, fields: [frontmatter___date]},
                 ) {
                   edges {
@@ -114,7 +119,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-root-import`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -130,10 +134,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        extensions: [".mdx", ".md"],
-        gatsbyRemarkPlugins: [
+        plugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -148,34 +151,36 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: 'Monokai'
+            }
           },
           {
             resolve: `gatsby-remark-copy-linked-files`,
           },
-          {
-            resolve: `gatsby-remark-smartypants`,
-          },
+       
+          `gatsby-remark-smartypants`,
+          `gatsby-remark-images`,
         ],
-        plugins: [`gatsby-remark-images`],
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // edit below
-        // trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     // edit below
+    //     // trackingId: `ADD YOUR TRACKING ID HERE`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `GeekReflex`,
         short_name: `GeekReflex`,
+        description: `Software Blog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        // edit below
         icon: `content/assets/gatsby-icon.png`,
       },
     },

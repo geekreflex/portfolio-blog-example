@@ -6,9 +6,9 @@ import SEO from "../components/SEO"
 import SearchPosts from "../components/SearchPosts"
 
 export default function Blog(props) {
-  const { data, navigate, location } = props
+  const { data, location } = props
   const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMdx.edges
+  const posts = data.posts.edges
   const localSearchBlog = data.localSearchBlog
 
   return (
@@ -18,7 +18,6 @@ export default function Blog(props) {
       <SearchPosts
         posts={posts}
         localSearchBlog={localSearchBlog}
-        navigate={navigate}
         location={location}
       />
     </Layout>
@@ -36,7 +35,7 @@ export const pageQuery = graphql`
       index
       store
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    posts: allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           excerpt
@@ -51,5 +50,6 @@ export const pageQuery = graphql`
         }
       }
     }
+  
   }
 `
