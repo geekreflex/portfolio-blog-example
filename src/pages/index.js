@@ -9,7 +9,7 @@ export default function IndexPage(props) {
   return (
     <Layout location={location}>
       <SEO
-        title="Home"
+        title="Jerry Nwosu"
         keywords={[
           `blog`,
           `software`,

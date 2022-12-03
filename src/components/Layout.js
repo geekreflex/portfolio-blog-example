@@ -3,15 +3,22 @@ import styled from "styled-components"
 
 import { Navigation } from "./Navigation"
 import "../style/style.css"
+import Theme from "./Theme"
+import { GlobalStyle } from "../style/GlobalStyle"
 
 export default function Layout(props) {
   const { children } = props
 
   return (
-    <Wrapper>
-      <Navigation />
-      <main>{children}</main>
-    </Wrapper>
+    <React.Fragment>
+      <Theme>
+        <GlobalStyle />
+        <Wrapper>
+          <Navigation />
+          <main>{children}</main>
+        </Wrapper>
+      </Theme>
+    </React.Fragment>
   )
 }
 
