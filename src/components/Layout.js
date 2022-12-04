@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 import { Navigation } from "./Navigation"
-import "../style/style.css"
 import Theme from "./Theme"
 import { GlobalStyle } from "../style/GlobalStyle"
 

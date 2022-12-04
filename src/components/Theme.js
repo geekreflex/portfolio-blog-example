@@ -2,17 +2,23 @@ import React from "react"
 import { useSelector } from "react-redux"
 import { ThemeProvider } from "styled-components"
 
+const accent = "#68B984"
+
 // dark theme schema
 const light = {
   colors: {
-    background: "orange",
+    background: "#f1f1f1",
+    textColor: "#222",
+    accent: accent,
   },
 }
 
 // light theme schema
 const dark = {
   colors: {
-    background: "#444",
+    background: "#05060B",
+    textColor: "#fff",
+    accent: accent,
   },
 }
 

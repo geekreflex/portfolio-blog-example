@@ -52,7 +52,7 @@ module.exports = {
         index: ["title", "body"],
         store: ["id", "slug", "date", "title", "excerpt", "description"],
         normalizer: ({ data }) =>
-          data.allMarkdownRemark.nodes.map(node => ({
+          data.allMarkdownRemark.nodes.map((node) => ({
             id: node.id,
             slug: node.fields.slug,
             body: node.rawMarkdownBody,
@@ -81,7 +81,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
@@ -140,37 +140,19 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
+              maxWidth: 800,
+              backgroundColor: "transparent",
             },
           },
           {
             resolve: `gatsby-remark-vscode`,
             options: {
-              theme: 'Monokai'
-            }
+              theme: "Monokai",
+            },
           },
-          {
-            resolve: `gatsby-remark-copy-linked-files`,
-          },
-       
-          `gatsby-remark-smartypants`,
-          `gatsby-remark-images`,
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     // edit below
-    //     // trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -182,12 +164,6 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
       },
     },
   ],

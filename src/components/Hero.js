@@ -5,33 +5,33 @@ export default function Hero(props) {
   return (
     <Wrapper>
       <HeroTop>
-        <div>
-          <h1>
-            Hy! My name <br />
-            is <span>Jerry</span>
-          </h1>
-          <p>
-            I am a professional programmer with more than 10 years of experience
-          </p>
-        </div>
-        <ImageContainer></ImageContainer>
+        <h1>
+          optimized <br />
+          solution seeker
+        </h1>
+        <p>
+          Hello stranger! 👋, my name is Jerry Nwosu a software engineer in
+          Nigeria. I make open source projects and write about code, design, and
+          everything in-between.
+        </p>
       </HeroTop>
     </Wrapper>
   )
 }
 
-const Wrapper = styled.div`
-  h1 {
-    font-size: 60px;
-
-    span {
-      font-weight: 900;
-      text-decoration: underline;
-    }
-  }
-`
+const Wrapper = styled.div``
 
 const HeroTop = styled.div`
-  display: flex;
+  margin-top: 100px;
+
+  h1 {
+    font-size: 4.5em;
+    font-weight: 900;
+  }
+
+  p {
+    width: 70%;
+    line-height: 1.5;
+    font-weight: 600;
+  }
 `
-const ImageContainer = styled.div``

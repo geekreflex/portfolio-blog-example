@@ -4,6 +4,7 @@ import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import SearchPosts from "../components/SearchPosts"
+import PostList from "../components/PostList"
 
 export default function Blog(props) {
   const { data, location } = props
@@ -14,12 +15,14 @@ export default function Blog(props) {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
-      <SearchPosts
+
+      <PostList posts={posts} />
+
+      {/* <SearchPosts
         posts={posts}
         localSearchBlog={localSearchBlog}
         location={location}
-      />
+      /> */}
     </Layout>
   )
 }
@@ -35,7 +38,7 @@ export const pageQuery = graphql`
       index
       store
     }
-    posts: allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+    posts: allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           excerpt
@@ -50,6 +53,5 @@ export const pageQuery = graphql`
         }
       }
     }
-  
   }
 `
