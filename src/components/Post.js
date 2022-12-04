@@ -15,7 +15,7 @@ export default function Post(props) {
         </PostDetail>
         <PostFooter>
           <small>{post.frontmatter.date}</small>
-          <small>☕️ 4 min</small>
+          <small>☕️ {post.fields.readingTime.text}</small>
         </PostFooter>
       </Link>
     </Wrapper>
