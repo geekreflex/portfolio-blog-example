@@ -1,10 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-import SearchPosts from "../components/SearchPosts"
-import PostList from "../components/PostList"
+import AllPosts from "../components/AllPosts"
 
 export default function Blog(props) {
   const { data, location } = props
@@ -16,7 +14,7 @@ export default function Blog(props) {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
 
-      <PostList posts={posts} />
+      <AllPosts posts={posts} />
 
       {/* <SearchPosts
         posts={posts}
