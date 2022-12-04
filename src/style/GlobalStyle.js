@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  font-family: 'montserrat';
+  font-family: 'merriweather';
   background-color: ${(props) => props.theme.colors.background};
   color: ${(props) => props.theme.colors.textColor};
 }
