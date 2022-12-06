@@ -25,6 +25,8 @@ export default function Post(props) {
 const Wrapper = styled.div`
   position: relative;
   border: 1px solid #fff;
+  background-color: ${(props) => props.theme.colors.background};
+  transition: transform linear 300ms;
 
   .abstract {
     width: 0;
@@ -69,12 +71,14 @@ const Wrapper = styled.div`
   }
 
   :hover {
-    .abstract {
+    transform: scale(1.05);
+    z-index: 1;
+    /* .abstract {
       width: 100%;
-    }
+    } */
 
     a {
-      color: #222;
+      /* color: #222; */
     }
   }
 `
