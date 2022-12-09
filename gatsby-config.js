@@ -17,6 +17,7 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-root-import`,
+    `gatsby-plugin-netlify`,
 
     /**
      * Search
