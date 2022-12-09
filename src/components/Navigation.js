@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { ThemeSwitch } from "./ThemeSwitch"
+// import { ThemeSwitch } from "./ThemeSwitch"
 
 export const Navigation = () => {
   const navLinks = [
@@ -25,7 +25,7 @@ export const Navigation = () => {
             </Link>
           ))}
         </LinkList>
-        <ThemeSwitch />
+        {/* <ThemeSwitch /> */}
       </RightWrap>
     </Wrapper>
   )

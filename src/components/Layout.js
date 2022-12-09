@@ -23,7 +23,7 @@ export default function Layout(props) {
 
 const Wrapper = styled.div`
   min-height: 100vh;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 `

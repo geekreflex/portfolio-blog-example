@@ -10,6 +10,7 @@ const light = {
     background: "#f1f1f1",
     textColor: "#222",
     accent: accent,
+    darkPurple: "#31263E",
   },
 }
 
@@ -19,6 +20,7 @@ const dark = {
     background: "#05060B",
     textColor: "#fff",
     accent: accent,
+    darkPurple: "#31263E",
   },
 }
 

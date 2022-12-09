@@ -25,20 +25,25 @@ function Bio() {
                 marginBottom: 0,
                 minWidth: 50,
                 borderRadius: `100%`,
+                width: 100,
+                height: 100,
               }}
               imgStyle={{
                 borderRadius: `50%`,
               }}
             />
-            <p>
-              Hello, thank for stopping by. I'm <strong>{author}</strong>, a
-              software engineer from Nigeria. This is my personal blog where I
-              dabble with codes and everything inbetween.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                Follow me on Twitter
-              </a>
-            </p>
+            <div className="content">
+              <p>
+                Hello, thank for stopping by. I'm <strong>{author}</strong>, a
+                software engineer from Nigeria. This is my personal blog where I
+                dabble with codes and everything inbetween.
+                {` `}
+                <a href={`https://twitter.com/${social.twitter}`}>
+                  Follow me on Twitter
+                </a>
+              </p>
+              <p>I'm a software engineer</p>
+            </div>
           </Container>
         )
       }}
@@ -68,6 +73,16 @@ const bioQuery = graphql`
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  background-color: ${(props) => props.theme.colors.darkPurple};
+  padding: 20px;
+  border-radius: 5px;
+
+  .content {
+    p {
+      font-size: 14px;
+    }
+  }
 `
 
 export default Bio

@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import styled from "styled-components"
 
 export default function BlogPostTemplate(props) {
   const post = props.data.markdownRemark
@@ -16,11 +17,17 @@ export default function BlogPostTemplate(props) {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <h1>{post.frontmatter.title}</h1>
-      <p>{post.frontmatter.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      <hr />
-      <Bio />
+
+      <Main>
+        <LeftSection>
+          <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.date}</p>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </LeftSection>
+        <RightSection>
+          <Bio />
+        </RightSection>
+      </Main>
 
       <ul
         style={{
@@ -70,3 +77,11 @@ export const pageQuery = graphql`
     }
   }
 `
+
+const Main = styled.div`
+  display: grid;
+  grid-template-columns: auto 300px;
+  gap: 50px;
+`
+const LeftSection = styled.div``
+const RightSection = styled.div``
