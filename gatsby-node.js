@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: 1000) {
+        allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
           edges {
             node {
               fields {
@@ -20,7 +20,6 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-      
       }
     `
   )
@@ -57,6 +56,21 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
+    })
+  }
+}
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html" || stage === "develop-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /react-redux/,
+            use: loaders.null(),
+          },
+        ],
+      },
     })
   }
 }
