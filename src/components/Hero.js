@@ -38,5 +38,5 @@ const Wrapper = styled.div`
 `
 
 const Wrap = styled.h1`
-  font-size: 40px;
+  font-size: 30px;
 `
