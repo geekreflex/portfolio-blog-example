@@ -1,7 +1,9 @@
 import React from "react"
-import Hero from "../components/Hero"
+import Hero, { Heading } from "../components/Hero"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import { projects } from "../data/projects"
+import { ProjectCard, ProjectsList } from "../style/DefaultStyles"
 
 export default function IndexPage(props) {
   const { location } = props
@@ -20,6 +22,17 @@ export default function IndexPage(props) {
         ]}
       />
       <Hero />
+      <div>
+        <Heading title="Projects" />
+        <ProjectsList>
+          {projects.map((project, index) => (
+            <ProjectCard key={index}>
+              <h3>{project.name}</h3>
+              <p>This is some description about the project.</p>
+            </ProjectCard>
+          ))}
+        </ProjectsList>
+      </div>
     </Layout>
   )
 }

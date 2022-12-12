@@ -1,28 +1,29 @@
 import React from "react"
 import styled from "styled-components"
 
-export default function Hero(props) {
+export default function Hero() {
   return (
     <Wrapper>
-      <HeroTop>
-        <h1>
-          optimized <br />
-          solution seeker
-        </h1>
-        <p>
-          Hello stranger! 👋, my name is Jerry Nwosu a software engineer in
-          Nigeria. I make open source projects and write about code, design, and
-          everything in-between.
-        </p>
-      </HeroTop>
+      <h1>
+        optimized <br />
+        solution seeker
+      </h1>
+      <p>
+        Hello stranger! 👋, my name is Jerry Nwosu a software engineer in
+        Nigeria. I make open source projects and write about code, design, and
+        everything in-between.
+      </p>
     </Wrapper>
   )
 }
 
-const Wrapper = styled.div``
+export const Heading = ({ title }) => {
+  return <Wrap>{title}</Wrap>
+}
 
-const HeroTop = styled.div`
+const Wrapper = styled.div`
   margin-top: 100px;
+  margin-bottom: 150px;
 
   h1 {
     font-size: 4.5em;
@@ -34,4 +35,8 @@ const HeroTop = styled.div`
     line-height: 1.5;
     font-weight: 600;
   }
+`
+
+const Wrap = styled.h1`
+  font-size: 40px;
 `

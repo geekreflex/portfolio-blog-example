@@ -74,7 +74,7 @@ const bioQuery = graphql`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${(props) => props.theme.colors.darkPurple};
+  background-color: ${(props) => props.theme.colors.bg_secondary};
   padding: 20px;
   border-radius: 5px;
 

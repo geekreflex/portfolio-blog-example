@@ -9,19 +9,25 @@ const light = {
   colors: {
     background: "#f1f1f1",
     textColor: "#222",
+    textColor_card: "#333",
     accent: accent,
-    darkPurple: "#31263E",
+    bg_secondary: "#ced4da",
+    borderColor1: "#adb5bd",
   },
+  radius1: "3px",
 }
 
 // light theme schema
 const dark = {
   colors: {
-    background: "#05060B",
+    background: "#212529",
     textColor: "#fff",
+    textColor_card: "#fff",
     accent: accent,
-    darkPurple: "#31263E",
+    bg_secondary: "#343a40",
+    borderColor1: "#495057",
   },
+  radius1: "3px",
 }
 
 // render selected theme schema
