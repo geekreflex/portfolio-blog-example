@@ -7,15 +7,14 @@ export default function Post(props) {
 
   return (
     <Wrapper>
-      <div className="abstract"></div>
-      <Link to={post.fields.slug}>
+      <Link to={post.slug}>
         <PostDetail>
-          <h2>{post.frontmatter.title}</h2>
-          <p>{post.frontmatter.description}</p>
+          <h2>{post.title}</h2>
+          <p>{post.description}</p>
         </PostDetail>
         <PostFooter>
-          <small>{post.frontmatter.date}</small>
-          <small>☕️ {post.fields.readingTime.text}</small>
+          <small>{post.date}</small>
+          <small>☕️ {post.read}</small>
         </PostFooter>
       </Link>
     </Wrapper>
@@ -24,19 +23,9 @@ export default function Post(props) {
 
 const Wrapper = styled.div`
   position: relative;
-  border: 1px solid #fff;
+  border: 1px solid ${(props) => props.theme.colors.borderColor1};
   background-color: ${(props) => props.theme.colors.background};
   transition: transform linear 300ms;
-
-  .abstract {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    background-color: #f1f1f1;
-    top: 0;
-    left: 0;
-    transition: all 300ms;
-  }
 
   a {
     position: relative;
@@ -73,13 +62,6 @@ const Wrapper = styled.div`
   :hover {
     transform: scale(1.05);
     z-index: 1;
-    /* .abstract {
-      width: 100%;
-    } */
-
-    a {
-      /* color: #222; */
-    }
   }
 `
 

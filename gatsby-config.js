@@ -37,7 +37,12 @@ module.exports = {
             allMarkdownRemark {
               nodes {
                 id
-                fields { slug }
+                fields { 
+                  slug
+                  readingTime {
+                    text
+                  }
+                }
                 excerpt
                 frontmatter {
                   title
@@ -51,16 +56,14 @@ module.exports = {
         `,
         ref: "id",
         index: ["title", "body"],
-        store: ["id", "slug", "date", "title", "excerpt", "description"],
         normalizer: ({ data }) =>
           data.allMarkdownRemark.nodes.map((node) => ({
             id: node.id,
             slug: node.fields.slug,
-            body: node.rawMarkdownBody,
-            excerpt: node.excerpt,
             title: node.frontmatter.title,
             description: node.frontmatter.description,
             date: node.frontmatter.date,
+            read: node.fields.readingTime.text,
           })),
       },
     },

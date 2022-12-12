@@ -13,11 +13,16 @@ export const ProjectCard = styled.div`
   border: 1px solid ${(props) => props.theme.colors.borderColor1};
   cursor: pointer;
 
-  h3 {
-    margin: 0;
-  }
+  .content {
+    h3 {
+      margin: 0;
+      padding: 0;
+      margin-bottom: 10px;
+    }
 
-  p {
-    font-size: 14px;
+    p {
+      font-size: 14px;
+      margin-top: 0;
+    }
   }
 `

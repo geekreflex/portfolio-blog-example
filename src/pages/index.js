@@ -27,8 +27,10 @@ export default function IndexPage(props) {
         <ProjectsList>
           {projects.map((project, index) => (
             <ProjectCard key={index}>
-              <h3>{project.name}</h3>
-              <p>This is some description about the project.</p>
+              <div className="content">
+                <h3>{project.name}</h3>
+                <p>This is some description about the project.</p>
+              </div>
             </ProjectCard>
           ))}
         </ProjectsList>

@@ -2,7 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-import AllPosts from "../components/AllPosts"
+import styled from "styled-components"
+import SearchPosts from "../components/SearchPosts"
 
 export default function Blog(props) {
   const { data, location } = props
@@ -13,14 +14,11 @@ export default function Blog(props) {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-
-      <AllPosts posts={posts} />
-
-      {/* <SearchPosts
+      <SearchPosts
         posts={posts}
         localSearchBlog={localSearchBlog}
         location={location}
-      /> */}
+      />
     </Layout>
   )
 }
