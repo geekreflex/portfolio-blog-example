@@ -1,6 +1,6 @@
-import React from "react"
-import { useSelector } from "react-redux"
+import React, { useContext } from "react"
 import { ThemeProvider } from "styled-components"
+import { ThemeContext } from "../context/ThemeContext"
 
 const accent = "#68B984"
 
@@ -14,7 +14,7 @@ const light = {
     bg_secondary: "#ced4da",
     borderColor1: "#adb5bd",
   },
-  radius1: "3px",
+  radius1: "6px",
 }
 
 // light theme schema
@@ -27,12 +27,14 @@ const dark = {
     bg_secondary: "#343a40",
     borderColor1: "#495057",
   },
-  radius1: "3px",
+  radius1: "6px",
 }
 
 // render selected theme schema
 const Theme = ({ children }) => {
-  const { theme } = useSelector((state) => state.app)
+  const { theme } = useContext(ThemeContext)
+
+  console.log("THEME", theme)
 
   const renderTheme = () => {
     if (theme === "light") return light

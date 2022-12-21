@@ -9,13 +9,32 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
+import { Icon } from "@iconify/react"
 
 function Bio() {
+  const socials = [
+    {
+      name: "Twitter",
+      icon: "carbon:logo-twitter",
+      url: "https://twitter.com/geekreflex",
+    },
+    {
+      name: "Github",
+      icon: "carbon:logo-github",
+      url: "https://github.com/geekreflex",
+    },
+    {
+      name: "LinkedIn",
+      icon: "carbon:logo-linkedin",
+      url: "https://linkedin.com/in/jaynwosu",
+    },
+  ]
+
   return (
     <StaticQuery
       query={bioQuery}
       render={(data) => {
-        const { author, social } = data.site.siteMetadata
+        const { author } = data.site.siteMetadata
         return (
           <Container>
             <Image
@@ -33,16 +52,15 @@ function Bio() {
               }}
             />
             <div className="content">
-              <p>
-                Hello, thank for stopping by. I'm <strong>{author}</strong>, a
-                software engineer from Nigeria. This is my personal blog where I
-                dabble with codes and everything inbetween.
-                {` `}
-                <a href={`https://twitter.com/${social.twitter}`}>
-                  Follow me on Twitter
-                </a>
-              </p>
+              <h3>Jerry Nwosu</h3>
               <p>I'm a software engineer</p>
+              <div className="socials">
+                {socials.map((social) => (
+                  <a title={social.name} target="_blank" href={social.url}>
+                    <Icon icon={social.icon} />
+                  </a>
+                ))}
+              </div>
             </div>
           </Container>
         )
@@ -79,8 +97,22 @@ const Container = styled.div`
   border-radius: 5px;
 
   .content {
+    h3 {
+      margin-bottom: 10px;
+    }
+
     p {
       font-size: 14px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+
+      a {
+        font-size: 28px;
+        color: ${(props) => props.theme.colors.textColor};
+      }
     }
   }
 `

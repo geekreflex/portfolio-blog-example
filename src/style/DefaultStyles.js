@@ -26,3 +26,18 @@ export const ProjectCard = styled.div`
     }
   }
 `
+
+export const Button = styled.button`
+  padding: 15px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #24877b;
+  color: white;
+  :hover {
+    background-color: #1b655c;
+  }
+`

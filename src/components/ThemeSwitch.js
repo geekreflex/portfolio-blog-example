@@ -1,26 +1,19 @@
 import { Icon } from "@iconify/react"
-import React from "react"
-import { useDispatch } from "react-redux"
-import { useSelector } from "react-redux"
+import React, { useContext } from "react"
 import styled from "styled-components"
-import { toggleTheme } from "../features/appSlice"
+import { ThemeContext } from "../context/ThemeContext"
 
 export function ThemeSwitch() {
-  const dispatch = useDispatch()
-  const { theme } = useSelector((state) => state.app)
-
-  const onTheme = () => {
-    dispatch(toggleTheme())
-  }
+  const { theme, toggleTheme } = useContext(ThemeContext)
 
   const renderTheme = () => {
-    if (theme === "light") return "pepicons:sun"
-    return "ri:moon-line"
+    if (theme === "light") return "ri:moon-line"
+    return "pepicons:sun"
   }
 
   return (
     <Wrapepr>
-      <button onClick={onTheme}>
+      <button onClick={toggleTheme}>
         <Icon icon={renderTheme()} fontSize="24" />
       </button>
     </Wrapepr>
@@ -40,5 +33,7 @@ const Wrapepr = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    background: none;
+    color: ${(props) => props.theme.colors.textColor};
   }
 `

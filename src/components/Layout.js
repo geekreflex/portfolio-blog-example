@@ -4,15 +4,14 @@ import styled from "styled-components"
 import { Navigation } from "./Navigation"
 import Theme from "./Theme"
 import { GlobalStyle } from "../style/GlobalStyle"
-import { Provider } from "react-redux"
-import { store } from "../app/store"
+import { ThemeProvider } from "../context/ThemeContext"
 
 export default function Layout(props) {
   const { children } = props
 
   return (
     <React.Fragment>
-      <Provider store={store}>
+      <ThemeProvider>
         <Theme>
           <GlobalStyle />
           <Wrapper>
@@ -20,7 +19,7 @@ export default function Layout(props) {
             <main>{children}</main>
           </Wrapper>
         </Theme>
-      </Provider>
+      </ThemeProvider>
     </React.Fragment>
   )
 }
