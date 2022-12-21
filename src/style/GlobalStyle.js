@@ -37,4 +37,18 @@ blockquote p {
   margin: 0;
 }
 
+.filename {
+  background-color: ${(props) => props.theme.colors.bg_secondary};
+  margin-bottom: -20px;
+  padding: 0;
+  height:45px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  font-size: 14px;
+  
+}
+
 `
