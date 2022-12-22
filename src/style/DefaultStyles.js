@@ -41,3 +41,7 @@ export const Button = styled.button`
     background-color: #1b655c;
   }
 `
+
+export const Heading = styled.h1`
+  font-size: 60px;
+`
