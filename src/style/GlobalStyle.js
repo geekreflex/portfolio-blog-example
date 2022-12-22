@@ -51,4 +51,15 @@ blockquote p {
   
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: ${(props) => props.theme.colors.scrollbarColor};
+}
+
+::-webkit-scrollbar-thumb {
+  background: ${(props) => props.theme.colors.scrollbarThumbColor};
+  border-radius: 2px;
+}
+
 `

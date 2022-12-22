@@ -13,6 +13,8 @@ const light = {
     accent: accent,
     bg_secondary: "#ced4da",
     borderColor1: "#adb5bd",
+    scrollbarColor: "#777",
+    scrollbarThumbColor: "#bbb",
   },
   radius1: "6px",
 }
@@ -26,6 +28,8 @@ const dark = {
     accent: accent,
     bg_secondary: "#343a40",
     borderColor1: "#495057",
+    scrollbarColor: "#333",
+    scrollbarThumbColor: "#666",
   },
   radius1: "6px",
 }
